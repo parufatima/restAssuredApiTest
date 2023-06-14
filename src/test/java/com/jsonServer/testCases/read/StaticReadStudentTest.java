@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class StaticReadStudentTest extends BasePublicApi {
 
-    @Test
+    @Test(priority=0)
     public void getStudentsShouldSucceed(){
         given()
                 .log().uri()
@@ -19,7 +19,7 @@ public class StaticReadStudentTest extends BasePublicApi {
                 .log().body();
 
     }
-    @Test
+    @Test(priority=1)
     public void getSingleStudentShouldSucceed(){
         given()
                 .log().uri()

@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
 public class StaticWriteStudentTest extends BasePublicApi {
-    @Test
+    @Test(priority=0)
     public void createStudentUsingMapShouldSucceed(){
 
         String studentName = LoremIpsum.getInstance().getName();
@@ -35,7 +35,7 @@ public class StaticWriteStudentTest extends BasePublicApi {
                 .body("name", equalTo(studentName))
                 .body("courseId", equalTo(2));
     }
-    @Test
+    @Test(priority=1)
     public void createStudentUsingJsonShouldSucceed(){
 
         String studentName = LoremIpsum.getInstance().getName();
@@ -57,7 +57,7 @@ public class StaticWriteStudentTest extends BasePublicApi {
                 .body("name", equalTo(studentName))
                 .body("courseId", equalTo(2));
     }
-    @Test
+    @Test(priority=2)
     public void updateStudentUsingJsonShouldSucceed(){
 
         String studentName = LoremIpsum.getInstance().getName();
@@ -79,7 +79,7 @@ public class StaticWriteStudentTest extends BasePublicApi {
                 .body("name", equalTo(studentName))
                 .body("courseId", equalTo(2));
     }
-    @Test
+    @Test(priority=3)
     public void replaceStudentUsingJsonShouldSucceed(){
 
         String studentName = LoremIpsum.getInstance().getName();
@@ -101,7 +101,7 @@ public class StaticWriteStudentTest extends BasePublicApi {
                 .body("name", equalTo(studentName))
                 .body("courseId", equalTo(2));
     }
-    @Test
+    @Test(priority=4)
     public void deleteStudentUsingJsonShouldSucceed(){
         int studentId= given()
                 .log().uri()

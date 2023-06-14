@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class DynamicReadStudentTest extends BasePublicApi {
-    @Test
+    @Test(priority=0)
     public void getStudentsShouldSucceed(){
 
         int studentId = given()
@@ -28,7 +28,7 @@ public class DynamicReadStudentTest extends BasePublicApi {
                 .log().body();
 
     }
-    @Test
+    @Test(priority=1)
     public void getSingleStudentShouldSucceed(){
         int studentId = given()
                 .log().uri()
