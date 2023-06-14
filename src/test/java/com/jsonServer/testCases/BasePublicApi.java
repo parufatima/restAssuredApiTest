@@ -8,7 +8,7 @@ public class BasePublicApi {
     @BeforeMethod
     public void setup(){
         RestAssured.baseURI = "http://localhost";
-        RestAssured.port = 300;
+        RestAssured.port = 3000;
         RestAssured.basePath = "";
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     }
