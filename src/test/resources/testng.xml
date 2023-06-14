@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/SSHgit/restAssuredApiTest">
+        <classes>
+            <class name="com.jsonServer.testCases.read.StaticReadStudentTest"></class>
+            <class name="com.jsonServer.testCases.write.StaticWriteStudentTest"></class>
+            <class name="com.jsonServer.testCases.read.DynamicReadStudentTest"></class>
+            <class name="com.jsonServer.testCases.write.DynamicWriteStudentTest"></class>
+            <class name="com.jsonServer.testCases.read.StaticReadCoursesTest"></class>
+            <class name="com.jsonServer.testCases.write.StaticWriteCourseTest"></class>
+            <class name="com.jsonServer.testCases.read.DynamicReadCourseTest"></class>
+            <class name="com.jsonServer.testCases.write.DynamicWriteCourseTest"></class>
+        </classes>
+    </test>
+</suite>
