@@ -3,14 +3,14 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/SSHgit/restAssuredApiTest">
         <classes>
-            <class name="com.jsonServer.testCases.read.StaticReadStudentTest"></class>
-            <class name="com.jsonServer.testCases.write.StaticWriteStudentTest"></class>
-            <class name="com.jsonServer.testCases.read.DynamicReadStudentTest"></class>
-            <class name="com.jsonServer.testCases.write.DynamicWriteStudentTest"></class>
-            <class name="com.jsonServer.testCases.read.StaticReadCoursesTest"></class>
-            <class name="com.jsonServer.testCases.write.StaticWriteCourseTest"></class>
-            <class name="com.jsonServer.testCases.read.DynamicReadCourseTest"></class>
-            <class name="com.jsonServer.testCases.write.DynamicWriteCourseTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.read.StaticReadStudentTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.write.StaticWriteStudentTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.read.DynamicReadStudentTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.write.DynamicWriteStudentTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.read.StaticReadCoursesTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.write.StaticWriteCourseTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.read.DynamicReadCourseTest"></class>
+            <class name="com.jsonServer.testCases.PublicRestApis.write.DynamicWriteCourseTest"></class>
         </classes>
     </test>
 </suite>

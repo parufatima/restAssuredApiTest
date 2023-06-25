@@ -1,6 +1,6 @@
-package com.jsonServer.testCases.write;
+package com.jsonServer.testCases.PublicRestApis.write;
 
-import com.jsonServer.testCases.BasePublicApi;
+import com.jsonServer.testCases.PublicRestApis.BasePublicApi;
 import com.thedeanda.lorem.LoremIpsum;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
@@ -9,109 +9,110 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;
 
-public class DynamicWriteStudentTest extends BasePublicApi {
-    @Test(priority=0)
-    public void createStudentUsingJsonShouldSucceed(){
-
-        String studentName = LoremIpsum.getInstance().getName();
+public class DynamicWriteCourseTest extends BasePublicApi {
+    @Test
+    public void createCourseUsingJsonShouldSucceed(){
+        String courseName = LoremIpsum.getInstance().getName();
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("name", studentName);
-        jsonObject.put("courseId", 2);
+        jsonObject.put("name",courseName);
 
         given()
                 .header("Content-Type","application/json")
                 .log().uri()
                 .body(jsonObject)
-                .log().body()
                 .when()
-                .post("/students")
+                .post("/courses")
                 .then()
                 .statusCode(201)
                 .log().body()
-                .body("id", notNullValue())
-                .body("name", equalTo(studentName))
-                .body("courseId", equalTo(2));
+                .body("name",equalTo(courseName))
+                .body("id", notNullValue());
     }
-    @Test(priority=1)
-    public void replaceStudentUsingJsonShouldSucceed(){
-        int studentId = given()
+    @Test
+    public void replaceCourseUsingJsonShouldSucceed(){
+
+       int courseId= given()
                 .log().uri()
                 .when()
-                .get("/students")
+                .get("/courses")
                 .then()
                 .statusCode(200)
                 .log().body()
                 .extract().jsonPath().getInt("[0].id");
 
-        String studentName = LoremIpsum.getInstance().getName();
+        String courseName = LoremIpsum.getInstance().getName();
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("name", studentName);
-        jsonObject.put("courseId", 2);
+        jsonObject.put("name",courseName);
 
         given()
                 .header("Content-Type","application/json")
                 .log().uri()
                 .body(jsonObject)
-                .log().body()
                 .when()
-                .put("/students/{studentId}",studentId)
+                .put("/courses/{courseId}",courseId)
                 .then()
                 .statusCode(200)
                 .log().body()
-                .body("id", notNullValue())
-                .body("name", equalTo(studentName))
-                .body("id",equalTo(studentId))
-                .body("courseId", equalTo(2));
+                .body("name",equalTo(courseName))
+                .body("id",equalTo(courseId));
+
     }
-    @Test(priority=2)
-    public void updateStudentUsingJsonShouldSucceed(){
-        int studentId = given()
+    @Test
+    public void updateCourseUsingJsonShouldSucceed(){
+
+        int courseId= given()
                 .log().uri()
                 .when()
-                .get("/students")
+                .get("/courses")
                 .then()
                 .statusCode(200)
                 .log().body()
                 .extract().jsonPath().getInt("[0].id");
 
-
-        String studentName = LoremIpsum.getInstance().getName();
+        String courseName = LoremIpsum.getInstance().getName();
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("name", studentName);
-
+        jsonObject.put("name",courseName);
 
         given()
                 .header("Content-Type","application/json")
                 .log().uri()
                 .body(jsonObject)
-                .log().body()
                 .when()
-                .patch("/students/{studentId}",studentId)
+                .patch("/courses/{courseId}",courseId)
                 .then()
                 .statusCode(200)
                 .log().body()
-                .body("id", notNullValue())
-                .body("name", equalTo(studentName))
-                .body("id",equalTo(studentId))
-                .body("courseId", equalTo(2));
+                .body("name",equalTo(courseName))
+                .body("id",equalTo(courseId));
+
     }
-    @Test(priority=3)
-    public void DeleteStudentUsingJsonShouldSucceed(){
-        int studentId = given()
+    @Test
+    public void deleteCourseUsingJsonShouldSucceed(){
+
+        int courseId= given()
                 .log().uri()
                 .when()
-                .get("/students/")
+                .get("/courses")
                 .then()
                 .statusCode(200)
                 .log().body()
                 .extract().jsonPath().getInt("[0].id");
 
+
         given()
                 .log().uri()
                 .when()
-                .delete("/students/{studentId}",studentId)
+                .delete("/courses/{courseId}",courseId)
                 .then()
                 .statusCode(200)
                 .log().body();
+
+
     }
+
+
+
 }
+
+
+

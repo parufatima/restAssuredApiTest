@@ -1,0 +1,15 @@
+package com.jsonServer.testCases.PublicRestApis;
+
+import io.restassured.RestAssured;
+import org.testng.annotations.BeforeMethod;
+
+public class BasePublicApi {
+
+    @BeforeMethod
+    public void setup(){
+        RestAssured.baseURI = "http://localhost";
+        RestAssured.port = 3000;
+        RestAssured.basePath = "";
+        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
+    }
+}

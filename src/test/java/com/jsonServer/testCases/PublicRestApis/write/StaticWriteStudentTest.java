@@ -1,6 +1,6 @@
-package com.jsonServer.testCases.write;
+package com.jsonServer.testCases.PublicRestApis.write;
 
-import com.jsonServer.testCases.BasePublicApi;
+import com.jsonServer.testCases.PublicRestApis.BasePublicApi;
 import com.thedeanda.lorem.LoremIpsum;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
